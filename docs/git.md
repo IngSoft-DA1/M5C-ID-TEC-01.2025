@@ -1,8 +1,9 @@
-# Conceptos basicos
+# Conceptos básicos
 -  Repositorio: Estructura de directorios donde se almacenan los elementos componentes de software producidos a lo largo de todo el proyecto.
 - GIT: es un sistema de control de versiones distribuido que permite gestionar y registrar cambios en el código, facilitando la colaboración entre desarrolladores.
--  `.gitignore`: un archivo en la raíz del repositorio que se utiliza para especificar que archivos no deben ser trackeados ni estar en el repositorio. Recomendable usar [paginas](gitignore.io) para generarlo.
--  root del proyecto de git: carpeta raiz del repositorio.
+-  `.gitignore`: un archivo en la raíz del repositorio que se utiliza para especificar que archivos no deben ser trackeados por Git. Recomendable usar páginas como gitignore.io para generarlo.
+- Root del repositorio: carpeta raiz del mismo.
+
 ## Workflow:
 ![image](https://github.com/user-attachments/assets/ac2fb236-bfb1-4481-83e6-cdf27759be13)
 
@@ -11,7 +12,7 @@
 - `git clone [url]`: clonar un repositorio desde un servicio como github a tu computadora.
 - `git status`: muestra el estado de los archivos (modificados o que ya estan en el área stage).
 - `git add`: en general agrega todo el contenido excepto lo ignorado en el archivo (.gitignore). Puede configurarse con los distintos parámetros. Se puede llegar a usar muchas veces antes de un commit.
-- `git add .`: agrega todos los archivos que estén mas abajo del directorio actual (no de la raíz del repositorio) es decir si estoy en en el `root` del `repositorio` y hago `cd sample` y luego `git add .` solo se actualizará el index con los archivos que cambiaron dentro de la carpeta `sample` ![[Pasted image 20240822183920.png]]
+- `git add .`: agrega todos los archivos que estén mas abajo del directorio actual (no de la raíz del repositorio) es decir si estoy en en el `root` del `repositorio` y hago `cd sample` y luego `git add .` solo se actualizará el index con los archivos que cambiaron dentro de la carpeta `sample`
 - `git add -A`: Es como `git add .` pero no tiene en cuenta el directorio actual donde te encuentras, agrega todos los archivos al área stage.
 - `git commit -m "[mensaje]"`: crea un snapshot con los archivos que estan marcados como `staged` incluyendo un mensaje especifico.
 - `git pull`:  incorpora los cambios desde el repositorio a la rama actual.
@@ -33,15 +34,15 @@ Es un flujo de trabajo definido para el uso con Git que especifica qué tipo de 
 - **Para integrar cambios a la rama master se crean las ramas release desde develop**
 
 ## Ramas Features:
-Se generan a partir de la rama develop y estan asociadas a una nueva funcionalidad a ser trabajada. Una vez termianada la rama se mergea a develop. 
+Se generan a partir de la rama develop y estan asociadas a una nueva funcionalidad a ser trabajada. Una vez terminada la misma, la rama se mergea a develop. 
 Algunos Ejemplos:
 - feature/createUser
 - feature/deleteUser
 
 ## Ventajas
-- Cada funcionalidad es englobada en una rama independiente:
-	a.El código se vuelve más simple de revisar
-	b.Es más fácil relacionar requerimientos y funcionalidades con el código donde fueron implementadas
+- Cada funcionalidad es englobada en una rama independiente
+- El código se vuelve más simple de revisar
+- Es más fácil relacionar requerimientos y funcionalidades con el código donde fueron implementadas
 - Reduce el porcentaje de conflictos.
 - Volver al pasado en el código se vuelve más simple.
 
@@ -53,7 +54,7 @@ Algunos ejemplos:
 - bugfix/user-logout
 
 ## Ventajas
-- Cada correccion se asocia a una rama especifica:
-	a.El código se vuelve más simple de revisar previo a la integracion en otra rama
-	b.Es más facil de hacer un rollback en caso que la solucion al bug provoque errores en otro lugar
+- Cada correccion se asocia a una rama especifica
+- El código se vuelve más simple de revisar previo a la integración en otra rama
+- Es más facil de hacer un rollback en caso que la solución al bug provoque errores en otro lugar
 - Minimiza el porcentaje de conflictos.
