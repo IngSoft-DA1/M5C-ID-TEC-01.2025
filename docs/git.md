@@ -18,7 +18,9 @@
 - `git pull`:  incorpora los cambios desde el repositorio a la rama actual.
 - `git push`:  actualiza las referencias remotas usando las locales.
 - `git fetch`: busca y descarga el contenido de un repositorio remoto y actualiza el repositorio local para que coincida con ese contenido.
+- `git branch`: lista todas las ramas actuales de un repositorio local.
 - `git branch [name]`: crea una nueva rama que referencia al commit de la rama donde estamos poscicionados actualmente.
+- `git branch -D [name]`: elimina de forma permanente la rama de nombre `name` de un repositorio local.
 - `git checkout [name]`:  sirve para cambiarse a la rama de nombre `name`.
 - `git checkout -b [name]`:  crea una rama con nombre `name` y se cambia a ella.
 - `git merge [name]` integra los cambios de la rama de nombre `name` a la que estamos poscicionados actualmente. Para el obligatorio deberán utilizar `git merge --no-ff` ya que crea un commit manteniendo el historial.
