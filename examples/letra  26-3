@@ -1,0 +1,65 @@
+Ejercicio: Sistema de Gestión de Empleados y Proyectos
+
+Objetivo:
+Crear un sistema para gestionar personas y proyectos en una empresa. 
+Las personas pueden ser de diferentes tipos (empleados fijos y contratados) donde cada uno puede estar asignado a un proyecto.
+Deberá exisitir al menos un empleado de cualquier tipo por proyecto. 
+El sistema debe validar los datos de entrada como la edad, el salario y el tipo de proyecto mediante el uso de excepciones en
+caso que los datos sean invalidos.
+El tipo de excepción que se deberá usar sera la de ArgumentException.
+
+
+Requisitos:
+1. Biblioteca de Clases (Dominio):
+
+Clase base Persona con las siguientes propiedades y validaciones:
+
+Nombre (string): No puede estar vacío ni nulo.
+
+Edad (int): Debe ser mayor o igual a 18 años.
+
+SalarioBase (decimal): Debe ser mayor a cero.
+
+Método calcularSalario que deberá devolver un valor decimal y no 
+tendrá implementación, será sobreescrito en las clases derivadas;
+
+
+Dos clases derivadas de Persona:
+
+EmpleadoFijo (con atributo decimal bono anual):
+
+Calcular el salario final como SalarioBase + BonoAnual.
+
+Contratados (con una tarifa por hora (decimal) y horas trabajadas (int):
+La tarifa por hora validar que sea mayor a cero.
+
+Calcular el salario final como TarifaPorHora * HorasTrabajadas.
+
+
+
+Clase Proyecto con las siguientes propiedades y validaciones:
+
+Nombre (string): No puede estar vacío ni nulo.
+
+Presupuesto (decimal): Debe ser mayor a cero.
+
+FechaInicio (DateTime): La fecha debe ser mayor o igual a la fecha actual.
+
+Lista de colaboradores (que pueden ser empleados fijos o contratados).
+
+
+
+2. Proyecto de Consola:
+Crear un programa de consola donde tenga precargados:
+
+- empleados (fijos y contratados) con sus datos 
+- uno o mas proyectos con su presupuesto, fecha de inicio y empleados asignados 
+
+Al ejecutar el proyecto se debera mostrar en la terminal 
+- el nombre del proyecto junto con su presupuesto
+- el nombre de cada empleado asignado al proyecto junto con su salario.
+
+
+Manejar las excepciones y mostrar mensajes claros en caso de que los datos precargados sean inválidos
+utilizando try-catch.
+
