@@ -1,0 +1,10 @@
+Ejercicio
+
+Agregar al proyecto existente la logica necesaria que falta para poder eliminar y actualizar una pelicula.
+
+El componente blazor de actualizar la pelicula (llamarlo por ejemplo MovieUpdate.razor) debera tener deshabilitado el input referido 
+al titulo de la pelicula ya que ese campo se usa para poder identificar univocamente una pelicula y no deberia poder actualizarse.
+
+Cuando se elimina una pelicula la pantalla deberia hacer reload y eliminar la pelicula de la lista.
+
+Luego de actualizar una pelicula navegar a la pagina que contiene la lista de peliculas.
