@@ -16,6 +16,16 @@ public class ContractorTests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
+    public void NewContractor_WhenNameIsNull_ThenThrowException()
+    {
+        //arrange
+        Contractor contractor;
+        //act
+        contractor = new Contractor(null, 35, 3000, 60, 180);
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
     public void NewContractor_WhenNameIsEmpty_ThenThrowException()
     {
         //arrange
@@ -25,7 +35,7 @@ public class ContractorTests
     }
 
     [TestMethod]
-    public void NewContractor_WhenNameIsNotEmpty_ThenNameIsValid()
+    public void NewContractor_WhenNameIsNotNullOrEmpty_ThenNameShouldBeAssigned()
     {
         //arrange
         Contractor contractor;
@@ -46,7 +56,7 @@ public class ContractorTests
     }
 
     [TestMethod]
-    public void NewContractor_WhenAgeIsAboveEighteen_ThenAgeIsValid()
+    public void NewContractor_WhenAgeIsAboveEighteen_ThenAgeShouldBeAssigned()
     {
         //arrange
         Contractor contractor;
@@ -67,7 +77,7 @@ public class ContractorTests
     }
 
     [TestMethod]
-    public void NewEmployee_WhenBaseSalaryIsAboveCero_ThenBaseSalaryIsValid()
+    public void NewContractor_WhenBaseSalaryIsAboveCero_ThenBaseSalaryShouldBeAssigned()
     {
         //arrange
         Contractor contractor;
@@ -88,7 +98,7 @@ public class ContractorTests
     }
 
     [TestMethod]
-    public void NewContractor_WhenHourlyRateIsAboveCero_ThenHourlyRateIsValid()
+    public void NewContractor_WhenHourlyRateIsAboveCero_ThenHourlyRateShouldBeAssigned()
     {
         //arrange
         Contractor contractor;
@@ -99,7 +109,7 @@ public class ContractorTests
     }
 
     [TestMethod]
-    public void NewContractor_WhenWorkedHoursAreGiven_ThenWorkedHoursAreValid()
+    public void NewContractor_WhenWorkedHoursAreGiven_ThenWorkedHoursShouldBeAssigned()
     {
         //arrange
         Contractor contractor;

@@ -43,7 +43,7 @@ Nombre (string): No puede estar vacío ni nulo.
 
 Presupuesto (decimal): Debe ser mayor a cero.
 
-FechaInicio (DateTime): La fecha debe ser mayor o igual a la fecha actual.
+FechaInicio (DateTime): La fecha debe ser menor o igual a la fecha actual.
 
 Lista de colaboradores (que pueden ser empleados fijos o contratados).
 

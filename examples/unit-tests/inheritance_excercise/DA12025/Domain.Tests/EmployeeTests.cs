@@ -16,6 +16,16 @@ public class EmployeeTests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
+    public void NewEmployee_WhenNameIsNull_ThenThrowException()
+    {
+        //arrange
+        Employee employee;
+        //act
+        employee = new Employee(null, 35, 4000, 2000);
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
     public void NewEmployee_WhenNameIsEmpty_ThenThrowException()
     {
         //arrange
@@ -25,7 +35,7 @@ public class EmployeeTests
     }
 
     [TestMethod]
-    public void NewEmployee_WhenNameIsNotEmpty_ThenNameIsValid()
+    public void NewEmployee_WhenNameIsNotNullOrEmpty_ThenNameShouldBeAssigned()
     {
         //arrange
         Employee employee;
@@ -46,7 +56,7 @@ public class EmployeeTests
     }
 
     [TestMethod]
-    public void NewEmployee_WhenAgeIsAboveEighteen_ThenAgeIsValid()
+    public void NewEmployee_WhenAgeIsAboveEighteen_ThenAgeShouldBeAssigned()
     {
         //arrange
         Employee employee;
@@ -67,7 +77,7 @@ public class EmployeeTests
     }
 
     [TestMethod]
-    public void NewEmployee_WhenBaseSalaryIsAboveCero_ThenBaseSalaryIsValid()
+    public void NewEmployee_WhenBaseSalaryIsAboveCero_ThenBaseSalaryShouldBeAssigned()
     {
         //arrange
         Employee employee;
@@ -78,7 +88,7 @@ public class EmployeeTests
     }
 
     [TestMethod]
-    public void NewEmployee_WhenAnualBondIsGiven_ThenAnualBondIsValid()
+    public void NewEmployee_WhenAnualBondIsGiven_ThenAnualBondShouldBeAssigned()
     {
         //arrange
         Employee employee;
