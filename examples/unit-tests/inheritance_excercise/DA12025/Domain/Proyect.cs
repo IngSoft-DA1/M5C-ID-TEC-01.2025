@@ -2,14 +2,14 @@
 
 public class Proyect
 {
-    private string name;
-    private decimal budget;
-    private DateTime startDate;
-    private List<Person> staffList;
+    private string _name;
+    private decimal _budget;
+    private DateTime _startDate;
+    private List<Person> _staffList;
 
     public string Name
     {
-        get { return name; }
+        get => _name;
         set
         {
             if (String.IsNullOrEmpty(value))
@@ -17,13 +17,13 @@ public class Proyect
                 throw new ArgumentException("Name cannot be null or empty");
             }
 
-            name = value;
+            _name = value;
         }
     }
 
     public decimal Budget
     {
-        get { return budget; }
+        get => _budget;
         set
         {
             if (value <= 0)
@@ -31,27 +31,27 @@ public class Proyect
                 throw new ArgumentException("Budget cannot be less or equal to zero");
             }
 
-            budget = value;
+            _budget = value;
         }
     }
 
     public DateTime StartDate
     {
-        get { return startDate; }
+        get => _startDate;
         set
         {
-            if (value < DateTime.Now)
+            if (value > DateTime.Now)
             {
-                throw new ArgumentException("Start date cannot be earlier than today");
+                throw new ArgumentException("Start date must be earlier than today");
             }
 
-            startDate = value;
+            _startDate = value;
         }
     }
 
     public List<Person> StaffList
     {
-        get { return staffList; }
+        get => _staffList;
     }
 
     public Proyect(string name, decimal budget, DateTime startDate)
@@ -59,11 +59,26 @@ public class Proyect
         Name = name;
         Budget = budget;
         StartDate = startDate;
-        staffList = new List<Person>();
+        _staffList = new List<Person>();
     }
 
     public void AddContributors(Person person)
     {
-        staffList.Add(person);
+        _staffList.Add(person);
+    }
+
+    public void ShowContributorsSalary()
+    {
+        if (StaffList.Count < 1)
+        {
+            throw new ArgumentException("At least one contributor is required on the proyect");
+        }
+
+        Console.WriteLine($"Proyect: {Name}, Budget: ${Budget}");
+
+        foreach (var person in StaffList)
+        {
+            Console.WriteLine($"{person.Name} has a salary of: ${person.CalculateSalary()}");
+        }
     }
 }

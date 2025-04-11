@@ -2,13 +2,13 @@
 
 public abstract class Person
 {
-    private string name;
-    private int age;
-    private decimal baseSalary;
+    private string _name;
+    private int _age;
+    private decimal _baseSalary;
 
     public string Name
     {
-        get { return name; }
+        get => _name;
         set
         {
             if (String.IsNullOrEmpty(value))
@@ -16,13 +16,13 @@ public abstract class Person
                 throw new ArgumentException("Name cannot be null or empty");
             }
 
-            name = value;
+            _name = value;
         }
     }
 
     public int Age
     {
-        get { return age; }
+        get => _age;
         set
         {
             if (value < 18)
@@ -30,13 +30,13 @@ public abstract class Person
                 throw new ArgumentException("Age must be at least 18");
             }
 
-            age = value;
+            _age = value;
         }
     }
 
     public decimal BaseSalary
     {
-        get { return baseSalary; }
+        get => _baseSalary;
         set
         {
             if (value <= 0)
@@ -44,7 +44,7 @@ public abstract class Person
                 throw new ArgumentException("Base salary cannot be zero or negative");
             }
 
-            baseSalary = value;
+            _baseSalary = value;
         }
     }
 
